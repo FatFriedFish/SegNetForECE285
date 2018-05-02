@@ -1,6 +1,7 @@
 # SemanticSegmentationForECE285
 
 ## AlexNet
+```
 AlexNet(
   (features): Sequential(
     (0): Conv2d(3, 64, kernel_size=(11, 11), stride=(4, 4), padding=(2, 2))
@@ -27,3 +28,4 @@ AlexNet(
     (6): Linear(in_features=4096, out_features=1000, bias=True)
   )
 )
+```
