@@ -25,7 +25,6 @@ class VGG_16_FCN(nn.Module):
         self.back_layer = back_layer
         self.deconv = use_deconv
         
-        
         self.front_features = self.make_layers(self.front_layer)
         self.mid_features = self.make_layers(self.middle_layer)
         self.back_features = self.make_layers(self.back_layer)
@@ -52,10 +51,7 @@ class VGG_16_FCN(nn.Module):
         
         if init_weights:
             self._initialize_weights()
-        
-        
-        
-        
+            
     def _initialize_weights(self):
         '''    
         # may try xavier, need modifying
@@ -71,12 +67,6 @@ class VGG_16_FCN(nn.Module):
                 m.weight.data.normal_(0, math.sqrt(2. / n))
                 m.bias.data.normal_(0)
                 
-                
-                
-                
-                
-                
-                
     def forward(self,x):
         h = x
         h = self.front_features(x)
@@ -88,9 +78,6 @@ class VGG_16_FCN(nn.Module):
         h = self.back_features(x)
         pool6 = h # 1/32
 
-        
-        
-        
     def make_layers(self, cfg, batch_norm=True):
 
         '''
@@ -159,8 +146,7 @@ class VGG_16_FCN(nn.Module):
                     layers += [conv2d, nn.ReLU(inplace=True)]
                 in_channels = v[0]
         return nn.Sequential(*layers)
-
-
+    
 cfg = {
     'VGG16': [(64,-1), (64,), ('M',), (128,), (128,), ('M',), (256,), (256,), (256,), (256,), ('M',), (512,), (512,), (512,), (512,),
               ('M',), (512,), (512,), (512,), (512,), ('M',)],
@@ -172,11 +158,6 @@ cfg = {
     'VGG16_Back': [('I',512),(512,), (512,), (512,), (512,), ('M',)]
     # size: 1/32 output pool5
     }
-'''
-# comment this while using  
-test_output = make_layers(cfg['VGG16_Middle'], batch_norm=True)
-print(test_output)
-'''
 
 
 
