@@ -1,18 +1,12 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
 import torch
 import torch.nn as nn
 import torch.nn.init as nninit
 import torch.nn.functional as F
 import numpy
 import matplotlib.pyplot as plt
-
-
-# In[5]:
 
 
 class VGG_16_FCN(nn.Module):
@@ -187,19 +181,4 @@ print(test_output)
 
 
 
-
-# In[15]:
-
-
-a = (4,2)
-a[0]
-
-
-# In[18]:
-
-
-input_i = torch.FloatTensor([1,4,3,5,11,7,3,4,5]).view(1, 1, 3, 3)
-print(input_i)
-m = nn.UpsamplingBilinear2d(scale_factor=2)
-m(input_i)
 
