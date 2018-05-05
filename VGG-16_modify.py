@@ -1,4 +1,5 @@
 
+
 # coding: utf-8
 
 import torch
@@ -9,49 +10,96 @@ import numpy
 import matplotlib.pyplot as plt
 
 
+
 class VGG_16_FCN(nn.Module):
     def __init__(self, front_layer, 
                  middle_layer, 
                  back_layer,
-                 num_classes = 10, 
-                 use_deconv = True
+                 class_num = 10, 
+                 use_deconv = False,
                  init_weight=True):
         
         super(VGG_16_FCN, self).__init__()
         
-        self.class_num = num_classes
+        # parameter intialize
+        self.class_num = class_num
         self.front_layer = front_layer
         self.middle_layer = middle_layer
         self.back_layer = back_layer
-        self.deconv = use_deconv
+        self.use_deconv = use_deconv
         
+        # three parts
         self.front_features = self.make_layers(self.front_layer)
         self.mid_features = self.make_layers(self.middle_layer)
         self.back_features = self.make_layers(self.back_layer)
         
+        # define relu/ drop function
         self.relu_fcn = nn.ReLU(inplace=True)
+        n.drop = nn.Dropout2d()
         
+        # sequential for pool3
+        self.pool3_func = nn.Sequential(
+                                        nn.Conv2d(self.front_layer[-2][0],self.class_num, kernel_size=1),
+                                        nn.BatchNorm2d(self.class_num),
+                                        nn.ReLU(inplace=True)
+                                        )
         
+        # sequential for pool4
+        self.pool4_func = nn.Sequential(
+                                        nn.Conv2d(self.front_layer[-2][0],self.class_num, kernel_size=1),
+                                        nn.BatchNorm2d(self.class_num),
+                                        nn.ReLU(inplace=True)
+                                        )
         
-        if use_deconv:
-            self.upsamp_3 = nn.ConvTranspose2d(self.front_layer[-2][0],
-                                              )
-            self.upsamp_4 = nn.ConvTranspose2d(self.middle_layer[-2][0],
-                                              )
-            self.upsamp_5 = nn.ConvTranspose2d(self.back_layer[-2][0],
-                                              )
-            
-        else: 
-            self.upsamp_3 = nn.UpsamplingBilinear2d(self.front_layer[-2][0],
-                                              )
-            self.upsamp_4 = nn.UpsamplingBilinear2d(self.middle_layer[-2][0],
-                                              )
-            self.upsamp_5 = nn.UpsamplingBilinear2d(self.back_layer[-2][0],
-                                              )
+        # sequential for pool5
+        
+        self.pool5_func = nn.Sequential(
+                                        nn.Conv2d(self.back_layer[-2][0], 1024, kernel_size = 3, padding = 1 ),
+                                        nn.BatchNorm2d(1024),
+                                        nn.ReLU(inplace=True),
+                                        nn.Conv2d(1024, 1024, kernel_size = 3,padding = 1),
+                                        nn.BatchNorm2d(1024),
+                                        nn.ReLU(inplace=True),
+                                        nn.Conv2d(1024, self.class_num, kernel_size = 1)
+                                        nn.BatchNorm2d(self.class_num),
+                                        nn.ReLU(inplace=True)
+                                        )
+ 
+        if self.use_deconv:
+            # last layer being maxpooling / select -2 position
+            '''
+            self.upsamp_3 = nn.ConvTranspose2d()
+            self.upsamp_4 = nn.ConvTranspose2d()
+            self.upsamp_5 = nn.ConvTranspose2d()
+            '''
+        else:
+            self.upsamp = nn.Sequential(
+                            nn.Upsample( scale_factor=(2,2), mode='bilinear', align_corners=True),
+                            nn.Conv2d(self.class_num, self.class_num, kernel_size=3 , padding=1)
+                            )
         
         if init_weights:
             self._initialize_weights()
-            
+    def forward(self,x):
+        h = x
+        h = self.front_features(h)
+        pool3 = h # 1/8
+        h = self.mid_features(h)
+        pool4 = h # 1/16
+        h = self.back_features(h)
+        pool5 = h # 1/32
+        
+        pool3 = self.pool3_func(pool3)
+        pool4 = self.pool4_func(pool4)
+        pool5 = self.pool5_func(pool5)
+        
+        pool4 = pool4 + self.upsamp(pool5)
+        h = pool3 + self.upsamp(pool4)
+        h = upsamp(h)
+        h = upsamp(h)
+        h = upsamp(h)
+        
+        
     def _initialize_weights(self):
         '''    
         # may try xavier, need modifying
@@ -66,18 +114,7 @@ class VGG_16_FCN(nn.Module):
                 n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
                 m.weight.data.normal_(0, math.sqrt(2. / n))
                 m.bias.data.normal_(0)
-                
-    def forward(self,x):
-        h = x
-        h = self.front_features(x)
-        pool4 = h # 1/8
-
-        h = self.mid_features(x)
-        pool5 = h # 1/16
-
-        h = self.back_features(x)
-        pool6 = h # 1/32
-
+           
     def make_layers(self, cfg, batch_norm=True):
 
         '''
@@ -146,7 +183,8 @@ class VGG_16_FCN(nn.Module):
                     layers += [conv2d, nn.ReLU(inplace=True)]
                 in_channels = v[0]
         return nn.Sequential(*layers)
-    
+
+
 cfg = {
     'VGG16': [(64,-1), (64,), ('M',), (128,), (128,), ('M',), (256,), (256,), (256,), (256,), ('M',), (512,), (512,), (512,), (512,),
               ('M',), (512,), (512,), (512,), (512,), ('M',)],
@@ -158,6 +196,8 @@ cfg = {
     'VGG16_Back': [('I',512),(512,), (512,), (512,), (512,), ('M',)]
     # size: 1/32 output pool5
     }
+
+
 
 
 
