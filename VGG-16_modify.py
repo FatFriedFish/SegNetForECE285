@@ -98,7 +98,7 @@ class VGG_16_FCN(nn.Module):
         h = upsamp(h)
         h = upsamp(h)
         h = upsamp(h)
-        
+        return h
         
     def _initialize_weights(self):
         '''    
