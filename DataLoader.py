@@ -10,16 +10,17 @@ import torchvision.transforms as transforms
 def data_loader(index, root, mode, Transform_data, Transform_lbl, ctg_index):
 
     def Categories(input_image, input_list):
+
+        input_image = np.array(input_image)
     
         input_list.sort()
-
-
+        
         C = len(input_list)
         target = np.zeros((input_image.shape[0], input_image.shape[1]))
 
         for i in range(C):
             target[np.where(input_image == input_list[i])] = i
-        target = np.array(target)
+        target = Image.fromarray(target)
         
         return target
 
@@ -46,6 +47,7 @@ def data_loader(index, root, mode, Transform_data, Transform_lbl, ctg_index):
         data_out.unsqueeze_(0)
 
         yield data_out, lbl_out
+        
         
 
 # parameters
