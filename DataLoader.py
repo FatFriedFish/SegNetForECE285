@@ -9,10 +9,8 @@ import torchvision.transforms as transforms
 
 def data_loader(index, root, mode, Transform_data, Transform_lbl, ctg_index):
 
-    def Categories(IMG_path, input_list):
+    def Categories(input_image, input_list):
     
-    
-        input_image = Image.open(IMG_path)
         input_list.sort()
 
 
