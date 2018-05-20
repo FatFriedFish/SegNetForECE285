@@ -21,7 +21,7 @@ def data_loader(index, root, mode, Transform_data, Transform_lbl, ctg_index):
         for i in range(C):
             target[np.where(input_image == input_list[i])] = i
         
-        return Image.fromarray(target)
+        return Image.fromarray(np.uint8(target))
 
 
     image_path0 = root + mode + '/' + mode + '_'
