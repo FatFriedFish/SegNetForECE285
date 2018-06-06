@@ -12,8 +12,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Packages
 
+Packages that need installation: numpy, Pillow, matplotlib, torch, torchvision.
+
+Use the following commands to install packages.
 ```Shell
-Install package "torch" : $ pip install torch
+Install numpy: $ pip install numpy
+Install Pillow: $ pip install Pillow
+Install matplotlib: $ pip install matplotlib
+Install torch: $ pip install torch
+Install torchvision: $ pip install torchvision
 ```
 
 
