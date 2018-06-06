@@ -32,8 +32,7 @@ Use the following commands to install packages.
 1. Clone the SegNetForECE285 rpository
   ```Shell
   # Make sure to clone with --recursive
-  git clone --recursive https://github.com/rbgirshick/fast-rcnn.git
-  ```
-
+  git clone --recursive https://github.com/FatFriedFish/SegNetForECE285.git
+  '''
 
 
