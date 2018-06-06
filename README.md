@@ -38,7 +38,7 @@ Use the following commands to install packages.
 
 ### Code organizaiton
 
-  folder: history_files     --Containing the files of previous versions.
+  folder  history_files     --Containing the files of previous versions.
 
   file:   Data_saving.ipynb --Modifying the Cityscapes dataset as needed. More details are written in the file.
 
