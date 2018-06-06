@@ -16,29 +16,24 @@ Packages that need installation: numpy, Pillow, matplotlib, torch, torchvision.
 
 Use the following commands to install packages.
 
-Install numpy:
-```Shell
-$ pip install numpy
-```
+  ```Shell
+  $ pip install numpy
 
-Install Pillow:
-```Shell
-$ pip install Pillow
-```
+  $ pip install Pillow
 
-Install matplotlib: 
-```Shell
-$ pip install matplotlib
-```
+  $ pip install matplotlib
 
-Install torch: 
-```Shell
-$ pip install torch
-```
+  $ pip install torch
 
-Install torchvision: 
-```Shell
-$ pip install torchvision
-```
+  $ pip install torchvision
+  ```
+### Installation (sufficient for the demo)
+
+1. Clone the SegNetForECE285 rpository
+  ```Shell
+  # Make sure to clone with --recursive
+  git clone --recursive https://github.com/rbgirshick/fast-rcnn.git
+  ```
+
 
 
