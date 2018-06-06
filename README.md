@@ -50,6 +50,12 @@ Use the following commands to install packages.
 
   file:   training_v4.ipynb --File for training a segnet.
 
+### Training
 
+Go through the training_v4.ipynb file, make sure the directories are correctly set.
+
+### Validation
+
+Go through the demo.ipynb file, make sure the directories are correctly set.
 
 
