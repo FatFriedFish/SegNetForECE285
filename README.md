@@ -34,5 +34,11 @@ Use the following commands to install packages.
   # Make sure to clone with --recursive
   git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
-2. 
+2. If you want to try pretrained network, please download the weight from XXXXXXXX. And put it in the same directory as demo.ipynb.
+
+### Code organizaiton
+
+
+
+
 
