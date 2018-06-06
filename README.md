@@ -33,6 +33,6 @@ Use the following commands to install packages.
   ```Shell
   # Make sure to clone with --recursive
   git clone --recursive https://github.com/FatFriedFish/SegNetForECE285.git
-  '''
+  ```
 
 
