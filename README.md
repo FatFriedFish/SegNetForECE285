@@ -39,10 +39,15 @@ Use the following commands to install packages.
 ### Code organizaiton
 
 folder: history_files     --Containing the files of previous versions.
+
 file:   Data_saving.ipynb --Modifying the Cityscapes dataset as needed. More details are written in the file.
+
 file:   data_exam.ipynb   --Check whether the dataset is correctly modified.
+
 file:   SegNet.py         --Containing the segnet network.
+
 file:   DataLoader.py     --Dataloader used for training.
+
 file:   training_v4.ipynb --File for training a segnet.
 
 
