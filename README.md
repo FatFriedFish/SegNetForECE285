@@ -29,10 +29,10 @@ Use the following commands to install packages.
   ```
 ### Installation (sufficient for the demo)
 
-1. Clone the SegNetForECE285 rpository
+1. Clone the SegNetForECE285 repository
   ```Shell
   # Make sure to clone with --recursive
-  git clone --recursive https://github.com/FatFriedFish/SegNetForECE285.git
+  git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
-
+2. 
 
