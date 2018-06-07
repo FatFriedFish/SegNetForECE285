@@ -1,6 +1,6 @@
 # Description
 
-This is project Semantic Segmentation by a Deep Encoder-Decoder Fully Convolutional Neural Network, which is developed by team CRY FOR LEARNING composed of Chen Du, Rui Cao and Yuihan Long.
+This is project Semantic Segmentation by a Deep Encoder-Decoder Fully Convolutional Neural Network, which is developed by team CRY FOR LEARNING composed of Chen Du, Rui Cao and Yuhan Long.
 
 ## Getting Started
 
