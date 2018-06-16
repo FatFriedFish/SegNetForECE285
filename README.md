@@ -33,7 +33,16 @@ Use the following commands to install packages.
   ```Shell
   git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
+  
 2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named "Models".
+
+3. If you want to run the training_v6_fixedweight.ipynb, please download the CITYCSAPES dataset, and run Data_saving,ipynb to modify the    dataset as needed. Then put the modified version under the same direcotory as training_v6_fixedweight.ipynb. The new dataset should      be arranged as follows:
+   ```shell
+   ./Cityscape_modified/
+                        train/ --Store training images.
+                        valid/ --Store validating images.
+                        test/  --Store test images.
+   ```
 
 ### Code organizaiton
 
@@ -41,7 +50,7 @@ Use the following commands to install packages.
   
   folder: test              --test images for Demo.ipynb is included.
   
-  folder: Models            --Please put all the downloaded models under this polder.
+  folder: Models            --Please put all the downloaded models under this folder.
 
   file:   Data_saving.ipynb --Modifying the Cityscapes dataset as needed. More details are written in the file.
 
