@@ -34,9 +34,9 @@ Use the following commands to install packages.
   git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
   
-2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named "Models".
+2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named ```Models```.
 
-3. If you want to run the training_v6_fixedweight.ipynb, please download the CITYCSAPES dataset, and run ```shell Data_saving.ipynb```      to modify the    dataset as needed. Then put the modified version under the same direcotory as training_v6_fixedweight.ipynb. The new    dataset should      be arranged as follows:
+3. If you want to run the training_v6_fixedweight.ipynb, please download the CITYCSAPES dataset, and run ```Data_saving.ipynb``` to        modify the dataset as needed. Then put the modified version under the same direcotory as ```training_v6_fixedweight.ipynb```. The new          dataset should be arranged as follows:
    ```shell
    ./Cityscape_modified/
                         train/ --Store training images.
@@ -67,23 +67,23 @@ Use the following commands to install packages.
 ```
 ### Training
 
-Before going through the training_v6_fixedweight.ipynb file, make sure the directories are correctly set. And please remember to modify the parameter "root" as :
+Before going through the ```training_v6_fixedweight.ipynb``` file, make sure the directories are correctly set. And please remember to modify the parameter ```root``` as :
 ```shell
 ./Cityscape_modified/
 ```
 
 ### Try our model
 
-Download models from the link we provided in the "Installation" session and make sure to put the models under folder "Models". Before running, follow the "Code organization" session to make sure the directories are correctly set.
+Download models from the link we provided in the "Installation" session and make sure to put the models under folder ```Models```. Before running, follow the "Code organization" session to make sure the directories are correctly set.
 
-Open Demo.ipynb, make sure the parameter "load_file_name" is correctly set. For example, we are using model named "checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar". Then it should be set as:
+Open ```Demo.ipynb```, make sure the parameter "load_file_name" is correctly set. For example, we are using model named "checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar". Then it should be set as:
 
 ```shell
 load_file_name = 'Models/checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar'
 ```
-Then you can go through Demo.ipynb to see the result of test images we provided.
+Then you can go through ```Demo.ipynb``` to see the result of test images we provided.
 
-To test other images in the folder test, please follow the guide. The segmentation results from SegNet models are calculated in batch size 2. So be sure to put at least 2 test images. They are set in the parameter "index_test", where the number is the index shown in the name of test images. So if you want to try "test_00000_ori.png" and "test_00017_ori,png", simply set
+To test other images in the folder test, please follow the guide. The segmentation results from SegNet models are calculated in batch size 2. So be sure to put at least 2 test images. They are set in the parameter ```index_test```, where the number is the index shown in the name of test images. So if you want to try "test_00000_ori.png" and "test_00017_ori,png", simply set
 
 ```shell
 index_test = [0, 17]
@@ -96,6 +96,6 @@ test_XXXXX_ori.png as your original image.
 test_XXXXX_lbl.png as your label image.
 ```
 
-You can set XXXXX as any five-digit positive integer. Remember to write it into the parameter "index_test".
+You can set XXXXX as any five-digit positive integer. Remember to write it into the parameter ```index_test```.
 
 
