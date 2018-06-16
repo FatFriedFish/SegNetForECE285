@@ -36,7 +36,7 @@ Use the following commands to install packages.
   
 2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named "Models".
 
-3. If you want to run the training_v6_fixedweight.ipynb, please download the CITYCSAPES dataset, and run Data_saving,ipynb to modify the    dataset as needed. Then put the modified version under the same direcotory as training_v6_fixedweight.ipynb. The new dataset should      be arranged as follows:
+3. If you want to run the training_v6_fixedweight.ipynb, please download the CITYCSAPES dataset, and run ```shell Data_saving.ipynb```      to modify the    dataset as needed. Then put the modified version under the same direcotory as training_v6_fixedweight.ipynb. The new    dataset should      be arranged as follows:
    ```shell
    ./Cityscape_modified/
                         train/ --Store training images.
