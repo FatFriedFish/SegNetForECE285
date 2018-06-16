@@ -30,9 +30,9 @@ Use the following commands to install packages.
 ### Installation (sufficient for the demo)
 
 1. Clone the SegNetForECE285 repository
-  ```Shell
-  git clone https://github.com/FatFriedFish/SegNetForECE285.git
-  ```
+   ```Shell
+     git clone https://github.com/FatFriedFish/SegNetForECE285.git
+   ```
   
 2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named ```Models```.
 
