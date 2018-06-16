@@ -45,6 +45,7 @@ Use the following commands to install packages.
    ```
 
 ### Code organizaiton
+```shell
 
   Folder: history_files     --Containing the files of previous versions.
   
@@ -63,7 +64,7 @@ Use the following commands to install packages.
   File:   training_v6_fixedweight.ipynb --File for training a segnet with weighted loss function.
   
   File:   Demo.ipynb        --A demo to test SegNet.
-
+```
 ### Training
 
 Before going through the training_v6_fixedweight.ipynb file, make sure the directories are correctly set. And please remember to modify the parameter "root" as :
