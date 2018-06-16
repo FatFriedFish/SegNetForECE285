@@ -33,7 +33,7 @@ Use the following commands to install packages.
   ```Shell
   git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
-2. If you want to try pretrained network, please download the weight from XXXXXXXX. And put it in the same directory as demo.ipynb.
+2. If you want to try pretrained network, please download the model from XXXXXXXX (the model is beyound the size limitation of Github).    Then put it into the folder named "Models".
 
 ### Code organizaiton
 
