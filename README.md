@@ -48,22 +48,15 @@ Use the following commands to install packages.
 
   folder: 
           history_files     --Containing the files of previous versions.
-  
           test              --test images for Demo.ipynb is included.
-  
           Models            --Please put all the downloaded models under this folder.
 
   file:   
           Data_saving.ipynb --Modifying the Cityscapes dataset as needed. More details are written in the file.
-
           data_exam.ipynb   --Check whether the dataset is correctly modified.
-
           SegNet.py         --Containing the segnet network.
-
           DataLoader.py     --Dataloader used for training.
-
           training_v6_fixedweight.ipynb --File for training a segnet with weighted loss function.
-  
           Demo.ipynb        --A demo to test SegNet.
 
 ### Training
