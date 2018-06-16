@@ -66,7 +66,10 @@ Use the following commands to install packages.
 
 ### Training
 
-Go through the training_v6_fixedweight.ipynb file, make sure the directories are correctly set.
+Before going through the training_v6_fixedweight.ipynb file, make sure the directories are correctly set. And please remember to modify the parameter "root" as :
+```shell
+./Cityscape_modified/
+```
 
 ### Try our model
 
