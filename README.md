@@ -59,8 +59,30 @@ Use the following commands to install packages.
 
 Go through the training_v6_fixedweight.ipynb file, make sure the directories are correctly set.
 
-### Validation
+### Try our model
 
-Go through the Demo.ipynb file, make sure the directories are correctly set.
+Download models from the link we provided in the "Installation" session and make sure to put the models under folder "Models". Before running, follow the "Code organization" session to make sure the directories are correctly set.
+
+Open Demo.ipynb, make sure the parameter "load_file_name" is correctly set. For example, we are using model named "checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar". Then it should be set as:
+
+```shell
+load_file_name = 'Models/checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar'
+```
+Then you can go through Demo.ipynb to see the result of test images we provided.
+
+To test other images in the folder test, please follow the guide. The segmentation results from SegNet models are calculated in batch size 2. So be sure to put at least 2 test images. They are set in the parameter "index_test", where the number is the index shown in the name of test images. So if you want to try "test_00000_ori.png" and "test_00017_ori,png", simply set
+
+```shell
+index_test = [0, 17]
+```
+
+To test your own image, be sure to also upload a label version of your image, and correctly name these images as:
+
+```shell
+test_XXXXX_ori.png as your original image.
+test_XXXXX_lbl.png as your label image.
+```
+
+You can set XXXXX as any five-digit positive integer. Remember to write it into the parameter "index_test".
 
 
