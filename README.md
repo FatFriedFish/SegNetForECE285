@@ -40,6 +40,8 @@ Use the following commands to install packages.
   folder: history_files     --Containing the files of previous versions.
   
   folder: test              --test images for Demo.ipynb is included.
+  
+  folder: Models            --Please put all the downloaded models under this polder.
 
   file:   Data_saving.ipynb --Modifying the Cityscapes dataset as needed. More details are written in the file.
 
