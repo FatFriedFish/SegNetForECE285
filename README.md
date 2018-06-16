@@ -79,7 +79,7 @@ Before going through the ```training_v6_fixedweight.ipynb``` file, make sure the
    Open ```Demo.ipynb```, and make sure the parameter ```load_file_name``` is correctly set. For example, we are using model named          "checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar". Then it should be set as:
 
    ```shell
-     load_file_name = 'Models/checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar'
+     load_file_name = './Models/checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar'
    ```
    Then you can go through ```Demo.ipynb``` to see the result of test images we provided.
 
