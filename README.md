@@ -7,7 +7,7 @@ This is project Semantic Segmentation by a Deep Encoder-Decoder Fully Convolutio
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Hardware
-
+The training part of SegNet needs to be run on 
 
 
 ### Packages
@@ -31,7 +31,6 @@ Use the following commands to install packages.
 
 1. Clone the SegNetForECE285 repository
   ```Shell
-  # Make sure to clone with --recursive
   git clone https://github.com/FatFriedFish/SegNetForECE285.git
   ```
 2. If you want to try pretrained network, please download the weight from XXXXXXXX. And put it in the same directory as demo.ipynb.
