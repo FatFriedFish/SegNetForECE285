@@ -81,10 +81,10 @@ Before going through the ```training_v6_fixedweight.ipynb``` file, make sure the
 
 1. Download models from the link we provided in the "Installation" session and make sure to put the models under folder ```Models```.      Before running, follow the "Code organization" session to make sure the directories are correctly set.
 
-   Open ```Demo.ipynb```, and make sure the parameter ```load_file_name``` is correctly set. For example, we are using model named          "checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar". Then it should be set as:
+   Open ```Demo.ipynb```, and make sure the parameter ```load_file_name``` is correctly set. For example, we are using model named          "checkpoint_with_epoch_00004_fixedweight_Adam.pth.tar". Then it should be set as:
 
    ```shell
-     load_file_name = './Models/checkpoint_with_epoch_00007_fixedweight_Adam.pth.tar'
+     load_file_name = './Models/checkpoint_with_epoch_00004_fixedweight_Adam.pth.tar'
    ```
    Then you can go through ```Demo.ipynb``` to see the result of test images we provided.
 
