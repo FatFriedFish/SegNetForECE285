@@ -47,7 +47,7 @@ Use the following commands to install packages.
 
   file:   DataLoader.py     --Dataloader used for training.
 
-  file:   training_v4.ipynb --File for training a segnet.
+  file:   training_v6_fixedweight.ipynb --File for training a segnet with weighted loss function.
 
 ### Training
 
